@@ -4,12 +4,10 @@ on:
   push:
     branches:
       - master
-
-
 jobs:
   lint:
     name: Run linter 
-    runs-on:ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: active/checkout@v2
       - name: Run golangci-lint
