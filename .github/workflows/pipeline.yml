@@ -9,6 +9,6 @@ jobs:
     name: Run linter 
     runs-on: ubuntu-latest
     steps:
-      - uses: active/checkout@v2
+      - uses: actions/checkout@v2
       - name: Run golangci-lint
         uses: actions-contrib/golangci-lint@v1
