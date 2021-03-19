@@ -23,9 +23,10 @@ func main() {
 	r := chi.NewRouter()
 
 	r.Get("/hello", h.Hello)
+	path := cfg.Host + ":" + cfg.Port
 
 	log.Print("Starting server")
-	err = http.ListenAndServe(":8080", r)
+	err = http.ListenAndServe(path, r)
 	log.Fatal(err)
 
 	log.Print("Shutting server down")
