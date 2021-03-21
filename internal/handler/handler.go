@@ -10,9 +10,9 @@ type Handler struct {
 	jokeClient api.Client
 }
 
-func NewHandler(JokeClient api.Client) *Handler {
+func NewHandler(jokeClient api.Client) *Handler {
 	return &Handler{
-		jokeClient: JokeClient,
+		jokeClient: jokeClient,
 	}
 }
 

@@ -23,7 +23,7 @@ func (jc *JokeClient) GetJoke() (*api.JokeResponse, error) {
 	urlPath := jc.url + getJokePath
 	r, err := http.Get(urlPath)
 	if err != nil {
-		return nil, nil
+		return nil, err
 	} else if r.StatusCode != http.StatusOK {
 		return nil, fmt.Errorf("API request status: %s", http.StatusText(r.StatusCode))
 	}
