@@ -4,6 +4,7 @@ import (
 	"log"
 	"net/http"
 
+	"workshop/internal/api/jokes"
 	"workshop/internal/config"
 	"workshop/internal/handler"
 
@@ -18,6 +19,9 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	apiClient := jokes.NewJokeClient(cfg.JokeURL)
+
 	h := handler.NewHandler()
 
 	r := chi.NewRouter()
