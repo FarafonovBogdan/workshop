@@ -1,12 +1,14 @@
-package handler
+package handler_test
 
 import (
 	"io/ioutil"
 	"net/http"
 	"net/http/httptest"
 	"testing"
+
 	"workshop/internal/api"
 	"workshop/internal/api/mocks"
+	"workshop/internal/handler"
 )
 
 func TestHandler_Joke(t *testing.T) {
@@ -31,7 +33,7 @@ func TestHandler_Joke(t *testing.T) {
 			apiMock := &mocks.Client{}
 			apiMock.On("GetJoke").Return(tt.joke, tt.err)
 
-			h := NewHandler(apiMock)
+			h := handler.NewHandler(apiMock)
 			r, _ := http.NewRequest("GET", "/jock", nil)
 			rr := httptest.NewRecorder()
 			h.Joke(rr, r)
