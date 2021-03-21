@@ -26,7 +26,7 @@ func main() {
 
 	r := chi.NewRouter()
 
-	r.Get("/hello", h.Hello)
+	r.Get("/joke", h.Joke)
 	path := cfg.Host + ":" + cfg.Port
 
 	log.Print("Starting server")

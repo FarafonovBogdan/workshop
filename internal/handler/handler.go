@@ -16,7 +16,7 @@ func NewHandler(jokeClient api.Client) *Handler {
 	}
 }
 
-func (h *Handler) Hello(w http.ResponseWriter, r *http.Request) {
+func (h *Handler) Joke(w http.ResponseWriter, r *http.Request) {
 	joke, err := h.jokeClient.GetJoke()
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
